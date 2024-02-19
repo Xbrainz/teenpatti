@@ -1,0 +1,57 @@
+/**
+ * User.js
+ *
+ * @description :: TODO: You might write a short summary of how this model works and what it represents here.
+ * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
+ */
+// grab the things we need
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+var userSchema = new Schema({
+	userName: { type: 'string', required: true, unique: true },
+	clientId: { type: 'string', default: '' },
+	profilePic: { type: 'string', default: '' },
+	lastBet: { type: 'string', default: '' },
+	lastAction: { type: 'string', default: '' },
+	chips: { type: 'number', default: 10000 },
+	turn: { type: 'boolean', default: false },
+	winner: { type: 'boolean', default: false },
+	show: { type: 'boolean', default: false },
+	active: { type: 'boolean', default: true },
+	deal: { type: 'boolean', default: false },
+	isAdmin: { type: 'boolean', default: false },
+	packed: { type: 'boolean', default: false },
+	isSideShowAvailable: { type: 'boolean', default: false },
+	tableId: { type: Schema.ObjectId, ref: 'tables' },
+	cardSet: { closed: { type: 'boolean', default: true } },
+	type: { type: 'string', default: '' },
+	mobile: { type: 'string', default: '' },
+	password: { type: 'string' },
+	displayName: { type: 'string', default: '' },
+	accountType: { type: 'string', default: '' },
+	role: { type: 'string', default: 'user' },
+	deviceId: { type: 'string', default: '' }
+},
+	{ timestamps: true });
+
+//  on every save, add the date
+userSchema.pre('save', function (next) {
+	// get the current date
+	var currentDate = new Date();
+	//this.role = parseInt(this.role);
+
+	// change the updated_at field to current date
+	this.updatedAt = currentDate;
+
+	// if created_at doesn't exist, add to that field
+	if (!this.createdAt) this.createdAt = currentDate;
+
+	next();
+});
+// userSchema.plugin(autoIncrement.plugin, 'user');
+
+var User = mongoose.model('user', userSchema);
+
+// make this available to our users in our Node applications
+module.exports = User;

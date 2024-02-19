@@ -1,0 +1,89 @@
+
+let mongoose = require('mongoose');
+let Schema = mongoose.Schema;
+let _ = require('lodash');
+
+let cardComparer = require('../service/variations/cardComparer');
+
+let tableSchema = new Schema({
+	name: { type: 'string' },
+	players: {},
+	maxPlayers: Number,
+	slotUsed: Number,
+	slotUsedArray: [],
+	boot: Number,
+	lastBet: Number,
+	lastBlind: Boolean,
+	maxBet: Number,
+	potLimit: Number,
+	type: { type: Number, default: 0 },
+	gameType: { type: Number, default: 0 },
+	playersLeft: { type: Number, default: 0 },
+	amount: { type: Number, default: 0 },
+	showAmount: { type: Boolean, default: true },
+	joker: {},
+	gameStarted: { type: Boolean, default: false },
+	isShowAvailable: { type: Boolean, default: true },
+	cardSet: { closed: { type: Boolean, default: true } },
+	cardinfoId: { type: Schema.ObjectId, ref: 'cardinfos' },
+	lastGameId: { type: Schema.ObjectId, ref: 'games' },
+	createdAt: { type: 'date' },
+	updatedAt: { type: 'date' },
+	type: { type: String, default: '' },
+	color: { type: String, default: '' },
+	color_code: { type: String, default: '' },
+	tableSubType: { type: String, default: '' },
+	password: { type: String, default: '' },
+	commission: { type: Number, default: 0 },
+	betRoundCompleted: { type: Number, default: 0 }
+}, {
+	timestamps: true
+});
+
+tableSchema.statics.gameStarted = false;
+
+tableSchema.statics.makeMeHighest = function (cardSets, matchCardNumber, cb) {
+	console.log('--------------------------------', cardSets);
+	let newCardSet = [];
+	for (let j = 0; j < cardSets.length; j++) {
+		let playerCard = cardSets[j].set;
+		let myPriority = cardComparer.getPriority(playerCard).priority;
+		console.log(myPriority);
+		let newSet = null;
+		let indexOf = _.findIndex(cardSets[j].set, function (s) {
+			return s.rank == matchCardNumber;
+		});
+		console.log('---', indexOf);
+		if (indexOf > -1) {
+			for (let m = 1; m <= 52; m++) {
+				playerCard[indexOf].rank = m;
+				if (cardComparer.getPriority(playerCard).priority > myPriority) {
+					myPriority = cardComparer.getPriority(playerCard).priority;
+					console.log(playerCard);
+					cardSets[j].set = JSON.parse(JSON.stringify(playerCard));
+				}
+			}
+		}
+	}
+
+	cb(cardSets);
+};
+
+//  on every save, add the date
+tableSchema.pre('save', function (next) {
+	// get the current date
+	let currentDate = new Date();
+	this.role = parseInt(this.role);
+
+	// change the updated_at field to current dat
+	this.updatedAt = currentDate;
+
+	// if created_at doesn't exist, add to that field
+	if (!this.createdAt) this.createdAt = currentDate;
+
+	next();
+});
+
+let Table = mongoose.model('tables', tableSchema);
+
+module.exports = Table;

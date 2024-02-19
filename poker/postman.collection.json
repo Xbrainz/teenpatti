@@ -1,0 +1,49 @@
+{
+    "info": {
+        "_postman_id": "c562aea9-a26e-413f-a7c6-947a1a139d61",
+        "name": "3patti",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Apis",
+            "item": [
+                {
+                    "name": "Update User With ClientID",
+                    "request": {
+                        "method": "Put",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw":"{\n\t\"userId\":\"\",\n\t\"clientId\":\"\"\n}",
+                            "options": {
+                                "raw": {
+                                    "language": "json"
+                                }
+                            }
+                        },
+                        "url": {
+                            "raw": "100.26.212.184/user/updateMovie",
+                            "host": [
+                                "100.26.212.184"
+                            ],
+                            "path": [
+                                "100.26.212.184",
+                                "user",
+                                "updateUser"
+                            ],
+                            "query": [
+                                {
+                                    "key": "id",
+                                    "value": ""
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "protocolProfileBehavior": {}
+        }
+    ]
+}

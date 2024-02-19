@@ -1,0 +1,387 @@
+let _ = require("underscore");
+let mongoose = require("mongoose");
+let logger = require("tracer").colorConsole();
+
+let deck = require("./deck");
+let Table = require("../model/Table");
+let CardInfo = require("../model/cardInfo");
+let Game = require("../model/game");
+let User = require("../model/User");
+let Transactions = require("../model/transaction");
+let { getNextActivePlayer } = require("./common");
+let constant = require("../core/constant");
+let startNewGameTime;
+let startNewGamePlyerJoinTime;
+
+async function startNewGameOnPlayerJoin(client, tableId, avialbleSlots, args) {
+	logger.info("Inside startNewGameOnPlayerJoin - tableId:"+ tableId + " avialbleSlots:" + avialbleSlots);
+	let myTable1 = await Table.findOne({
+		_id: tableId
+	});
+	let length = Object.keys(myTable1.players).length;
+	if (length >= constant.gameStartOnMinPlayer && !myTable1.gameStarted) {
+		client.emit("gameCountDown", { counter: 10 });
+		client.broadcast.to(myTable1._id).emit("gameCountDown", { counter: 10 });
+
+		clearTimeout(startNewGameTime);
+		clearTimeout(startNewGamePlyerJoinTime);
+		startNewGamePlyerJoinTime = setTimeout(async function() {
+			let myTable = await Table.findOne({ _id: tableId });
+			let activePlayer = Object.keys(myTable.players).length;
+			if (activePlayer >= constant.gameStartOnMinPlayer && !myTable.gameStarted) {
+				await prepareStartGame(client, myTable, avialbleSlots, length);
+			} else if (myTable.players.length < constant.gameStartOnMinPlayer && !myTable.gameStarted) {
+				client.emit("notification", {
+					message: "Please wait for more players to join",
+					timeout: 4000,
+				});
+				client.broadcast.to(myTable._id).emit("notification", {
+					message: "Please wait for more players to join",
+					timeout: 4000,
+				});
+			}
+		}, 10000);
+	} else if (length < constant.gameStartOnMinPlayer && !myTable1.gameStarted) {
+		client.emit("notification", {
+			message: "Please wait for more players to join",
+			timeout: 4000,
+		});
+		client.broadcast.to(myTable1._id).emit("notification", {
+			message: "Please wait for more players to join",
+			timeout: 4000,
+		});
+	}
+	logger.info("Leaving startNewGameOnPlayerJoin");
+}
+
+async function startNewGame(client, tableId, avialbleSlots) {
+	logger.info("Inside startNewGame - tableId:" + tableId + " avialbleSlots:" + avialbleSlots);
+	let myTable1 = await Table.findOne({
+		_id: tableId
+	});
+	let length = Object.keys(myTable1.players).length;
+
+	if (length >= constant.gameStartOnMinPlayer && !myTable1.gameStarted) {
+		client.emit("gameCountDown", { counter: 10 });
+		client.broadcast.to(myTable1._id).emit("gameCountDown", { counter: 10 });
+
+		startNewGameTime = setTimeout(async function() {
+			let myTable = await Table.findOne({ _id: tableId });
+			let activePlayer = Object.keys(myTable.players).length;
+
+			if (activePlayer >= constant.gameStartOnMinPlayer && !myTable.gameStarted) {
+				await prepareStartGame(client, myTable, avialbleSlots, length);
+			} else if (myTable.players.length < constant.gameStartOnMinPlayer) {
+				client.emit("notification", {
+					message: "Please wait for more players to join",
+					timeout: 4000,
+				});
+				client.broadcast.to(myTable._id).emit("notification", {
+					message: "Please wait for more players to join",
+					timeout: 4000,
+				});
+				let sentObj = {
+					players: myTable.players,
+					table: myTable,
+				};
+				client.emit("resetTable", sentObj);
+				client.broadcast.to(myTable._id).emit("resetTable", sentObj);
+			}
+		}, 10000);
+	} else if (length < constant.gameStartOnMinPlayer) {
+		client.emit("notification", {
+			message: "Please wait for more players to join",
+			timeout: 4000,
+		});
+		client.broadcast.to(myTable1._id).emit("notification", {
+			message: "Please wait for more players to join",
+			timeout: 4000,
+		});
+
+		let sentObj = {
+			players: myTable1.players,
+			table: myTable1,
+		};
+		client.emit("resetTable", sentObj);
+		client.broadcast.to(myTable1._id).emit("resetTable", sentObj);
+	}
+	logger.info("Leaving startNewGame");
+}
+
+async function prepareStartGame(client, table, avialbleSlots, playersleft) {
+    logger.info("Inside prepareStartGame - avialbleSlots:"+ avialbleSlots + " playersleft:"+ playersleft);
+    let cardInfo = await startGame(table, avialbleSlots);
+    table = await Table.findOne({ _id: table._id }); 
+    deck.shuffle();
+    let joker = deck.getCards();
+    let jokers = cardInfo.jokers;
+    delete cardInfo.jokers;
+
+    cardInfo = await CardInfo.create({ tableId: table._id, info: cardInfo, joker: joker[0], jokers });
+    let game = await Game.create({ tableId: table._id, cardInfoId: cardInfo._id, players: table.players });
+
+    table.cardinfoId = cardInfo._id;
+    table.lastGameId = game._id;
+    table.playersleft = playersleft;
+
+    await Table.update({ _id: table._id }, { $set: table });
+    let players = table.players;
+
+    for (let player in players) {
+        players[player].cardInfo = cardInfo._id;
+    }
+
+    let sentObj = { players, table, joker: joker[0], jokers };
+
+    let count = await Table.findOne({ _id: table._id }, { playersLeft: 1 });
+    if (count.playersLeft > 1) {
+        client.emit("startNew", sentObj);
+        client.broadcast.to(table._id).emit("startNew", sentObj);
+    } else {
+        await Table.update({ _id: table._id }, {
+            $set: {
+                gameStarted: false,
+                slotUsed: 1,
+                players: players,
+            },
+        });
+    }
+	logger.info("Leaving prepareStartGame");
+}
+
+async function startGame(table, avialbleSlots) {
+    logger.info("Inside startGame - avialbleSlots:" + avialbleSlots);
+	cardsInfo = {};
+
+    await resetTable(table);
+    let players = await resetAllPlayers(table.players);
+    await Table.update({ _id: table._id }, { $set: { players } });
+    let tablee = await Table.findOne({ _id: table._id });
+    
+    Table.gameStarted = true;
+    players = decideDeal(players, avialbleSlots, tablee.maxPlayer);
+    players = decideTurn(players, avialbleSlots, tablee.maxPlayer);
+
+    tablee.gameStarted = true;
+    tablee.isShowAvailable = Object.keys(players).length === 2;
+    tablee.isSideShowAvailable = true;
+
+   // await collectBootAmount(tablee, players);
+    tablee = await Table.findOne({ _id: tablee._id });
+    players = table.players;
+
+	logger.info("Leaving startGame");
+    return distributeCards(players, tablee);
+}
+
+async function resetTable(myTable) {
+	logger.info("Inside resetTable");
+	let iBoot = myTable.boot || 1000;
+	await Table.update(
+		{ _id: myTable._id },
+		{
+			$set: {
+				boot: iBoot,
+				lastBet: iBoot,
+				lastBlind: true,
+				showAmount: true,
+				amount: 0,
+				betRoundCompleted: 0
+			},
+        }
+    );
+	logger.info("Leaving resetTable");
+};
+
+async function resetAllPlayers(players) {
+	logger.info("Inside resetAllPlayers");
+	var allPlayers = [];
+
+	for (var player in players) {
+		allPlayers.push(player);
+    }
+    
+	await User.update(
+		{ _id: { $in: allPlayers } },
+		{
+			$set: {
+				turn: false,
+				active: true,
+				deal: false,
+				packed: false,
+				show: false,
+				isSideShowAvailable: false,
+				lastBet: '',
+				lastAction: '',
+				cardSet: {
+					closed: true,
+				},
+				noOfTurn: 0,
+				cardSeen: false
+			},
+        },
+    );
+		
+    for (var player in players) {
+        delete players[player].winner;
+        players[player].turn = false;
+        players[player].active = true;
+        players[player].show = false;
+		players[player].packed = false;
+		players[player].idle = false;
+		players[player].idle_amount = 0;
+        players[player].isSideShowAvailable = false;
+        players[player].cardSet = {
+            closed: true,
+        };
+        players[player].lastBet = '';
+        players[player].lastAction = '';
+        players[player].noOfTurn = 0;
+		players[player].cardSeen = false;
+    }
+
+	logger.info("Leaving resetAllPlayers");
+	return players;
+};
+
+function decideDeal(players, avialbleSlots, maxPlayer) {
+	logger.info("Inside decideDeal - avialbleSlots:" + avialbleSlots + " maxPlayer:" + maxPlayer + " players:" + players);
+	let firstPlayer = null,
+		dealFound = false,
+		isFirst = true,
+		dealPlayer;
+	for (let player in players) {
+		if (players[player].active) {
+			if (isFirst) {
+				firstPlayer = player;
+				isFirst = false;
+			}
+			if (players[player].deal === true) {
+				players[player].deal = false;
+				dealPlayer = players[player];
+				dealFound = true;
+			}
+		}
+	}
+	if (!dealFound) {
+		players[firstPlayer].deal = true;
+	} else {
+		let nextPlayer = getNextActivePlayer(dealPlayer.id, players, avialbleSlots, maxPlayer);
+		players[nextPlayer.id].deal = true;
+    }
+	logger.info("Leaving decideDeal - players:" + players);
+    return players;
+};
+
+function decideTurn(players, avialbleSlots, maxPlayer) {
+	logger.info("Inside decideTurn - avialbleSlots:" + avialbleSlots + " maxPlayer:" + maxPlayer);
+	let firstPlayer = null,
+		dealFound = false,
+		isFirst = true,
+		dealPlayer;
+	for (let player in players) {
+		if (players[player].active) {
+			if (isFirst) {
+				firstPlayer = player;
+				isFirst = false;
+			}
+			if (players[player].deal === true) {
+				dealPlayer = players[player];
+				dealFound = true;
+			}
+		}
+	}
+	if (!dealFound) {
+		players[firstPlayer].turn = true;
+	} else {
+		let nextPlayer = getNextActivePlayer(dealPlayer.id, players, avialbleSlots, maxPlayer)
+		players[nextPlayer.id].turn = true;
+    }
+	logger.info("Leaving decideTurn");
+    return players;
+};
+
+async function collectBootAmount(tableInfo, players) {
+	logger.info("Inside collectBootAmount");
+	var bootAmount = 0;
+	for (let player in players) {
+        if (players[player].active) {
+            players[player].lastBet = tableInfo.boot;
+            players[player].lastAction = '';
+            bootAmount = bootAmount + tableInfo.boot;
+			const userInfo = await User.findOne({ _id: players[player].id });
+			players[player].playerInfo.chips = userInfo.chips;
+            players[player].playerInfo.chips -= tableInfo.boot;
+            
+            await Transactions.create({
+                senderId: mongoose.Types.ObjectId(players[player].id),
+                userId: mongoose.Types.ObjectId(players[player].id),
+                coins: tableInfo.boot,
+                reason: 'Game',
+                trans_type: 'Chal'
+            });
+            
+            await User.update(
+                {
+                    _id: players[player].id,
+                },
+                {
+                    $set: {
+                        chips: players[player].playerInfo.chips,
+                    },
+                }
+            );
+        }
+    }
+    
+    await Table.update( { _id: tableInfo._id },
+        {
+            $set: {
+                amount: bootAmount,
+				players: players,
+				gameStarted: true
+            },
+        }
+    );
+	logger.info("Leaving collectBootAmount");
+}
+
+function distributeCards(players, table) {
+	logger.info("Inside distributeCards");
+	var cardsInfo = {};
+	deck.shuffle();
+	var deckCards = deck.getCards(),
+	index = 0;
+	for (var i = 0; i < 2; i++) {
+		for (var player in players) {
+			if (players[player].active) {
+				if (!cardsInfo[players[player].id]) {
+					cardsInfo[players[player].id] = {};
+				}
+				if (!cardsInfo[players[player].id].cards) {
+					cardsInfo[players[player].id].cards = [];
+				}
+				cardsInfo[players[player].id].cards.push(deckCards[index++]);
+			}
+		}
+	}
+
+	deck.shuffle();
+	deckCards = deck.getCards(),
+	index = 0;
+	for (var i = 0; i < 5; i++) {
+		// Add three joker
+		if (!cardsInfo.jokers) {
+			cardsInfo.jokers = [];
+		}
+		cardsInfo.jokers.push(deckCards[index++]);
+	}
+
+	logger.info("Leaving distributeCards");
+	return cardsInfo;
+}
+
+module.exports = {
+	startNewGameOnPlayerJoin,
+	startNewGame
+}

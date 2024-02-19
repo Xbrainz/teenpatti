@@ -1,0 +1,3169 @@
+{
+	"info": {
+		"_postman_id": "636977e1-4336-471a-964f-4c3c165d1b0c",
+		"name": "TeenPatti",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "Admin login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userName\": \"admin\",\n    \"password\": \"123456\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:5050/user/adminLogin",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5050",
+									"path": [
+										"user",
+										"adminLogin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Distributor login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userName\": \"dd_2\",\n    \"password\": \"123456\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:5050/user/adminLogin",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5050",
+									"path": [
+										"user",
+										"adminLogin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Agent login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userName\": \"aa_3_1\",\n    \"password\": \"123456\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:5050/user/adminLogin",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5050",
+									"path": [
+										"user",
+										"adminLogin"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "User login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userName\": \"t1\",\n    \"password\": \"123456\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:5050/user/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5050",
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Admin user login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userName\": \"admin3\",\n    \"password\": \"123456\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:5050/user/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5050",
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Distributor",
+			"item": [
+				{
+					"name": "create distributor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxMjA3NTkzNCwiZXhwIjozMjI0MTU1NDY4fQ.v2xsuZR6RfCVsu1jKFds6d_3eYsgbrNqSEnR9p-LJTQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"qtwaasaqww\",\r\n    \"password\":\"123456\",\r\n    \"chips\":245\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/distributor/createDistributor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"distributor",
+								"createDistributor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update distributor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxMTU1ODgwOCwiZXhwIjozMjIzMTIxMjE2fQ.DCM-pEYBTOVG2m8xTTwcYoEZOnDoDa8RgT6C1-hblhk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"600306e3e235951fe0bfdb33\",\r\n    \"userName\":\"vimaldda\",\r\n    \"password\":\"123456\",\r\n    \"displayName\":\"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/distributor/editDistributor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"distributor",
+								"editDistributor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get  distributor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxMDg2NjY0NSwiZXhwIjozMjIxNzM2ODkwfQ.vM1s5ksVMGE0PXNpIL7wTPIi_NElgfvrj02R2ph3FEs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/distributor/fetchAllDistributor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"distributor",
+								"fetchAllDistributor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete  distributor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxMDg2NjY0NSwiZXhwIjozMjIxNzM2ODkwfQ.vM1s5ksVMGE0PXNpIL7wTPIi_NElgfvrj02R2ph3FEs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/distributor/deleteDistributor?userId=600306f908321f2cf809576f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"distributor",
+								"deleteDistributor"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "600306f908321f2cf809576f"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Agent",
+			"item": [
+				{
+					"name": "create agent",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDE2NTNiMzk3OTEyMzI5NDQ1YWE3YWQiLCJpZCI6IjYwMTY1M2IzOTc5MTIzMjk0NDVhYTdhZCIsImlhdCI6MTYxMjA3NjAzOCwiZXhwIjozMjI0MTU1Njc2fQ.HR3hXMHcIALEYaVBsCoc7gszGE9qPlCGhywWA_JKwTY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"agent1\",\r\n    \"password\":\"123456\",\r\n    \"distributorId\":\"601653b397912329445aa7ad\",\r\n    \"chips\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/agent/createAgent",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"agent",
+								"createAgent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update agent",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxMTU1ODgwOCwiZXhwIjozMjIzMTIxMjE2fQ.DCM-pEYBTOVG2m8xTTwcYoEZOnDoDa8RgT6C1-hblhk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"6003c4bb103df8336829a646\",\r\n    \"userName\":\"vimalddg\",\r\n    \"password\":\"1234564\",\r\n    \"displayName\":\"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/agent/editAgent",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"agent",
+								"editAgent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get agent",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDAzMDZmOTA4MzIxZjJjZjgwOTU3NmYiLCJpZCI6IjYwMDMwNmY5MDgzMjFmMmNmODA5NTc2ZiIsImlhdCI6MTYxMTkwNDI0NiwiZXhwIjozMjIzODEyMDkyfQ.Z_lnJrLaHW26Ynhga6awfbl0KdOhE6hJoXBG8tjTHQY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/agent/fetchAllAgent",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"agent",
+								"fetchAllAgent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get agent by distributorId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZmI3NTVjMzJhYjcxNTRiNzE0ZTQxZGYiLCJpZCI6IjVmYjc1NWMzMmFiNzE1NGI3MTRlNDFkZiIsImlhdCI6MTYxMDg2MjM4OCwiZXhwIjozMjIxNzI4Mzc2fQ.nURkNH0bbyWiZJHY1Nk2S_kBBCFYhyozG-haubGahs4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/agent/distributor/6003ce40d26aa9081c19359b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"agent",
+								"distributor",
+								"6003ce40d26aa9081c19359b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete agent",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxMDg2NjY0NSwiZXhwIjozMjIxNzM2ODkwfQ.vM1s5ksVMGE0PXNpIL7wTPIi_NElgfvrj02R2ph3FEs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/agent/deleteAgent?userId=6003c4bb103df8336829a646",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"agent",
+								"deleteAgent"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "6003c4bb103df8336829a646"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Table",
+			"item": [
+				{
+					"name": "Get table",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZmI3NTVjMzJhYjcxNTRiNzE0ZTQxZGYiLCJpZCI6IjVmYjc1NWMzMmFiNzE1NGI3MTRlNDFkZiIsImlhdCI6MTYxMDg2MjM4OCwiZXhwIjozMjIxNzI4Mzc2fQ.nURkNH0bbyWiZJHY1Nk2S_kBBCFYhyozG-haubGahs4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/table/fetchTables",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"table",
+								"fetchTables"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get tables by type",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDFlM2Q0ZGYxZTJkMzFlODQzODVjY2MiLCJpZCI6IjYwMWUzZDRkZjFlMmQzMWU4NDM4NWNjYyIsImlhdCI6MTYyMDA1OTg0NSwiZXhwIjozMjQwMTIzMjkwfQ.k1KStrBzqugCsEm8oUE6l1j36LzG0nlHoFzBDIgTIeo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":\"premium\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/table/tablesByType",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"table",
+								"tablesByType"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create table",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDE2NTNiMzk3OTEyMzI5NDQ1YWE3YWQiLCJpZCI6IjYwMTY1M2IzOTc5MTIzMjk0NDVhYTdhZCIsImlhdCI6MTYxMjA3NjAzOCwiZXhwIjozMjI0MTU1Njc2fQ.HR3hXMHcIALEYaVBsCoc7gszGE9qPlCGhywWA_JKwTY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"name\": \"test\",\r\n        \"maxPlayers\": 10,\r\n        \"slotUsed\": 5,\r\n        \"boot\": 1,\r\n        \"maxBet\": 10,\r\n        \"potLimit\": 10,\r\n        \"slotUsedArray\": [1,2,3,4,5],\r\n        \"gameType\": 1,\r\n        \"isShowAvailable\": false,\r\n        \"type\": \"chal   \",\r\n        \"color\": \"red\",\r\n        \"color_code\": \"abc\",\r\n        \"tableSubType\": \"abc\",\r\n        \"password\": \"abc\",\r\n        \"commission\": 2,\r\n        \"turnTime\": 1,\r\n        \"minChip\":2,\r\n        \"maxChip\":5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/table/createTable",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"table",
+								"createTable"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Coin",
+			"item": [
+				{
+					"name": "Add coin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDQ1YzY2OWQ1MWUwNjI2NzhkM2MzMzkiLCJpZCI6IjYwNDVjNjY5ZDUxZTA2MjY3OGQzYzMzOSIsImlhdCI6MTYxNTkxNDQyMiwiZXhwIjozMjMxODMyNDQ0fQ.4j7XpVTQn8RBpw9QQc7QLDLTgf-uWk7qE9kH5sexD3w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"6045c6bfd51e062678d3c33d\",\r\n    \"coins\":50\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/coin/addCoin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"coin",
+								"addCoin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove coin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDAzMDZmOTA4MzIxZjJjZjgwOTU3NmYiLCJpZCI6IjYwMDMwNmY5MDgzMjFmMmNmODA5NTc2ZiIsImlhdCI6MTYxMTY3NTk4NCwiZXhwIjozMjIzMzU1NTY4fQ.KC0wG2aXy2nSxqGKnwhDG-906OweAckbkSsSnAcddVI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":\"6009b49a8af4be359440cb56\",\r\n    \"coins\":10,\r\n    \"transactionType\":\"Settlement\",\r\n    \"remark\":\"this is remark\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/coin/removeCoin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"coin",
+								"removeCoin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Add user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxNzI5MjM2NywiZXhwIjozMjM0NTg4MzM0fQ.0TScDUaSNYcpp4yaFho5w-nUHSoSlPkDCVjevnC__jo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\":\"user6\",\r\n    \"password\":\"123456\",\r\n    \"agentId\":\"6016542697912329445aa7af\",\r\n    \"chips\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/user/createUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"user",
+								"createUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxMTkwNDQ3NywiZXhwIjozMjIzODEyNTU0fQ.FUUT26wLNjktfxEZgfC4ZhVl58kRMuV98XQgvoz5qIs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/user/fetchAllUsers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"user",
+								"fetchAllUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get users details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxMTkwNDQ3NywiZXhwIjozMjIzODEyNTU0fQ.FUUT26wLNjktfxEZgfC4ZhVl58kRMuV98XQgvoz5qIs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/user/listUsers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"user",
+								"listUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get users types",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxMTkwNDQ3NywiZXhwIjozMjIzODEyNTU0fQ.FUUT26wLNjktfxEZgfC4ZhVl58kRMuV98XQgvoz5qIs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/user/usersByType",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"user",
+								"usersByType"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Report",
+			"item": [
+				{
+					"name": "GameWise",
+					"item": [
+						{
+							"name": "Gamewise report",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxMTkwNDQ3NywiZXhwIjozMjIzODEyNTU0fQ.FUUT26wLNjktfxEZgfC4ZhVl58kRMuV98XQgvoz5qIs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5050/report/gamewise?startDate=2021-01-30&endDate=2021-04-30&tableId=all&limit=20&skip=0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5050",
+									"path": [
+										"report",
+										"gamewise"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "2021-01-30"
+										},
+										{
+											"key": "endDate",
+											"value": "2021-04-30"
+										},
+										{
+											"key": "tableId",
+											"value": "all"
+										},
+										{
+											"key": "limit",
+											"value": "20"
+										},
+										{
+											"key": "skip",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "AgentWise",
+					"item": [
+						{
+							"name": "Agentwise report",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxNTU3MjE1MSwiZXhwIjozMjMxMTQ3OTAyfQ.TRoUd3ANcxheE_vw3wwwT4PA8YQSPAC28e6dvg0Oi0g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5050/report/agentwise?limit=10&skip=0&startDate=2020-01-30&endDate=2021-12-30",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5050",
+									"path": [
+										"report",
+										"agentwise"
+									],
+									"query": [
+										{
+											"key": "agentId",
+											"value": "6016542697912329445aa7af",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "skip",
+											"value": "0"
+										},
+										{
+											"key": "startDate",
+											"value": "2020-01-30"
+										},
+										{
+											"key": "endDate",
+											"value": "2021-12-30"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Agent commission by Agent Id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxNTU3MjE1MSwiZXhwIjozMjMxMTQ3OTAyfQ.TRoUd3ANcxheE_vw3wwwT4PA8YQSPAC28e6dvg0Oi0g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5050/report/commission/agent?date=2021-03-08&agentId=6045c69dd51e062678d3c33b",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5050",
+									"path": [
+										"report",
+										"commission",
+										"agent"
+									],
+									"query": [
+										{
+											"key": "date",
+											"value": "2021-03-08"
+										},
+										{
+											"key": "agentId",
+											"value": "6045c69dd51e062678d3c33b"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DistributorWise",
+					"item": [
+						{
+							"name": "Distributowise report",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxMTkwNDQ3NywiZXhwIjozMjIzODEyNTU0fQ.FUUT26wLNjktfxEZgfC4ZhVl58kRMuV98XQgvoz5qIs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5050/report/distributorwise?startDate=2021-01-09&endDate=2021-09-09&limit=20&skip=0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5050",
+									"path": [
+										"report",
+										"distributorwise"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "2021-01-09"
+										},
+										{
+											"key": "endDate",
+											"value": "2021-09-09"
+										},
+										{
+											"key": "distributorId",
+											"value": "6045c61ed51e062678d3c337",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "20"
+										},
+										{
+											"key": "skip",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Distributor commission by DristibutorId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDQ1YzYxZWQ1MWUwNjI2NzhkM2MzMzciLCJpZCI6IjYwNDVjNjFlZDUxZTA2MjY3OGQzYzMzNyIsImlhdCI6MTYxNTk5Njg5NCwiZXhwIjozMjMxOTk3Mzg4fQ.3cGCmBD9nXZuoreoXt-tkwIvHukOrrLaFkg0B8z_rpA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5050/report/commission/distributor?date=2021-03-08&distributorId=6045c61ed51e062678d3c337",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5050",
+									"path": [
+										"report",
+										"commission",
+										"distributor"
+									],
+									"query": [
+										{
+											"key": "date",
+											"value": "2021-03-08"
+										},
+										{
+											"key": "distributorId",
+											"value": "6045c61ed51e062678d3c337"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Ante",
+					"item": [
+						{
+							"name": "Ante table wise report",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxMTkwNDQ3NywiZXhwIjozMjIzODEyNTU0fQ.FUUT26wLNjktfxEZgfC4ZhVl58kRMuV98XQgvoz5qIs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5050/report/ante/tablewise?startDate=2021-01-25&endDate=2021-12-12&limit=10&skip=0&tableId=601d959af1e2d31e84385cc8",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5050",
+									"path": [
+										"report",
+										"ante",
+										"tablewise"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "2021-01-25"
+										},
+										{
+											"key": "endDate",
+											"value": "2021-12-12"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "skip",
+											"value": "0"
+										},
+										{
+											"key": "tableId",
+											"value": "601d959af1e2d31e84385cc8"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Ante table wise details report",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxMTkwNDQ3NywiZXhwIjozMjIzODEyNTU0fQ.FUUT26wLNjktfxEZgfC4ZhVl58kRMuV98XQgvoz5qIs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5050/report/ante/tablewise/details?date=2021-03-08&tableId=5fa1912db9751e2ffdf22109",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5050",
+									"path": [
+										"report",
+										"ante",
+										"tablewise",
+										"details"
+									],
+									"query": [
+										{
+											"key": "date",
+											"value": "2021-03-08"
+										},
+										{
+											"key": "tableId",
+											"value": "5fa1912db9751e2ffdf22109"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Ante player wise report",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDQ1YzY2OWQ1MWUwNjI2NzhkM2MzMzkiLCJpZCI6IjYwNDVjNjY5ZDUxZTA2MjY3OGQzYzMzOSIsImlhdCI6MTYxNTgyNzY2MywiZXhwIjozMjMxNjU4OTI2fQ.TLpclMPd4RhyMHZZtbRw5ihdMZDMmP2RbmV7h-X0Nxw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5050/report/ante/playerwise?startDate=2021-03-08&endDate=2021-03-11",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5050",
+									"path": [
+										"report",
+										"ante",
+										"playerwise"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "2021-03-08"
+										},
+										{
+											"key": "endDate",
+											"value": "2021-03-11"
+										},
+										{
+											"key": "userId",
+											"value": "6045c6bfd51e062678d3c33d",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Ante player wise detail report",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxMTkwNDQ3NywiZXhwIjozMjIzODEyNTU0fQ.FUUT26wLNjktfxEZgfC4ZhVl58kRMuV98XQgvoz5qIs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5050/report/ante/playerwise/details?date=2021-03-11&userId=6045c6bfd51e062678d3c33d",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5050",
+									"path": [
+										"report",
+										"ante",
+										"playerwise",
+										"details"
+									],
+									"query": [
+										{
+											"key": "date",
+											"value": "2021-03-11"
+										},
+										{
+											"key": "userId",
+											"value": "6045c6bfd51e062678d3c33d"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Rake",
+					"item": [
+						{
+							"name": "Rake table wise report",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxMTkwNDQ3NywiZXhwIjozMjIzODEyNTU0fQ.FUUT26wLNjktfxEZgfC4ZhVl58kRMuV98XQgvoz5qIs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5050/report/rake/tablewise?startDate=2021-01-25&endDate=2021-12-12&limit=10&skip=0&tableId=5fa1912db9751e2ffdf22109",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5050",
+									"path": [
+										"report",
+										"rake",
+										"tablewise"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "2021-01-25"
+										},
+										{
+											"key": "endDate",
+											"value": "2021-12-12"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "skip",
+											"value": "0"
+										},
+										{
+											"key": "tableId",
+											"value": "5fa1912db9751e2ffdf22109"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Rake table wise details report",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxMTkwNDQ3NywiZXhwIjozMjIzODEyNTU0fQ.FUUT26wLNjktfxEZgfC4ZhVl58kRMuV98XQgvoz5qIs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5050/report/rake/tablewise/details?date=2021-03-08&tableId=601d959af1e2d31e84385cc8",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5050",
+									"path": [
+										"report",
+										"rake",
+										"tablewise",
+										"details"
+									],
+									"query": [
+										{
+											"key": "date",
+											"value": "2021-03-08"
+										},
+										{
+											"key": "tableId",
+											"value": "601d959af1e2d31e84385cc8"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Rake player wise report",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDQ1YzYxZWQ1MWUwNjI2NzhkM2MzMzciLCJpZCI6IjYwNDVjNjFlZDUxZTA2MjY3OGQzYzMzNyIsImlhdCI6MTYxNTcwNDUwOSwiZXhwIjozMjMxNDEyNjE4fQ.lwxDqwJBKEGOPLleMaS044mvIAMWXbmREx1VHylsqN4",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5050/report/rake/playerwise?startDate=2021-03-08&endDate=2021-03-11&userId=6045c6bfd51e062678d3c33d",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5050",
+									"path": [
+										"report",
+										"rake",
+										"playerwise"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "2021-03-08"
+										},
+										{
+											"key": "endDate",
+											"value": "2021-03-11"
+										},
+										{
+											"key": "userId",
+											"value": "6045c6bfd51e062678d3c33d"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Rake player wise detail report",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxMTkwNDQ3NywiZXhwIjozMjIzODEyNTU0fQ.FUUT26wLNjktfxEZgfC4ZhVl58kRMuV98XQgvoz5qIs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5050/report/rake/playerwise/details?date=2021-03-08&userId=6045c6d7d51e062678d3c33f",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5050",
+									"path": [
+										"report",
+										"rake",
+										"playerwise",
+										"details"
+									],
+									"query": [
+										{
+											"key": "date",
+											"value": "2021-03-08"
+										},
+										{
+											"key": "userId",
+											"value": "6045c6d7d51e062678d3c33f"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Tablewise",
+					"item": [
+						{
+							"name": "tablewise report",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxMTkwNDQ3NywiZXhwIjozMjIzODEyNTU0fQ.FUUT26wLNjktfxEZgfC4ZhVl58kRMuV98XQgvoz5qIs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5050/report/tablewise?startDate=2021-03-01&endDate=2021-03-11&limit=10&skip=0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5050",
+									"path": [
+										"report",
+										"tablewise"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "2021-03-01"
+										},
+										{
+											"key": "endDate",
+											"value": "2021-03-11"
+										},
+										{
+											"key": "gameType",
+											"value": "3",
+											"disabled": true
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "skip",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Userwise",
+					"item": [
+						{
+							"name": "UserTypeAllTransactionTypeSelect",
+							"item": [
+								{
+									"name": "Userwise report By Boot",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxNjQzMDI1NywiZXhwIjozMjMyODY0MTE0fQ.L0F9XsHlA4I4r3kIuNWJtsqk9TJ2mYc38q3CI1rcmtY",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5050/report/userwise?startDate=2021-01-25&endDate=2021-05-12&skip=0&limit=20&transType=Boot&userId=All",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5050",
+											"path": [
+												"report",
+												"userwise"
+											],
+											"query": [
+												{
+													"key": "startDate",
+													"value": "2021-01-25"
+												},
+												{
+													"key": "endDate",
+													"value": "2021-05-12"
+												},
+												{
+													"key": "skip",
+													"value": "0"
+												},
+												{
+													"key": "limit",
+													"value": "20"
+												},
+												{
+													"key": "transType",
+													"value": "Boot"
+												},
+												{
+													"key": "userId",
+													"value": "All"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Userwise report By Win",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDQ1YzYxZWQ1MWUwNjI2NzhkM2MzMzciLCJpZCI6IjYwNDVjNjFlZDUxZTA2MjY3OGQzYzMzNyIsImlhdCI6MTYxNjE3ODc3MiwiZXhwIjozMjMyMzYxMTQ0fQ.-h3Er6qmGFrEUosbMWmIsrS0mWj4471IlZLA-p7X9vc",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5050/report/userwise?startDate=2021-01-25&endDate=2021-05-12&skip=0&limit=20&transType=Win&userId=All",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5050",
+											"path": [
+												"report",
+												"userwise"
+											],
+											"query": [
+												{
+													"key": "startDate",
+													"value": "2021-01-25"
+												},
+												{
+													"key": "endDate",
+													"value": "2021-05-12"
+												},
+												{
+													"key": "skip",
+													"value": "0"
+												},
+												{
+													"key": "limit",
+													"value": "20"
+												},
+												{
+													"key": "transType",
+													"value": "Win"
+												},
+												{
+													"key": "userId",
+													"value": "All"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Userwise report By Chal",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDQ1YzYxZWQ1MWUwNjI2NzhkM2MzMzciLCJpZCI6IjYwNDVjNjFlZDUxZTA2MjY3OGQzYzMzNyIsImlhdCI6MTYxNjE3ODc3MiwiZXhwIjozMjMyMzYxMTQ0fQ.-h3Er6qmGFrEUosbMWmIsrS0mWj4471IlZLA-p7X9vc",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5050/report/userwise?startDate=2021-01-25&endDate=2021-05-12&skip=0&limit=20&transType=Chal&userId=All",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5050",
+											"path": [
+												"report",
+												"userwise"
+											],
+											"query": [
+												{
+													"key": "startDate",
+													"value": "2021-01-25"
+												},
+												{
+													"key": "endDate",
+													"value": "2021-05-12"
+												},
+												{
+													"key": "skip",
+													"value": "0"
+												},
+												{
+													"key": "limit",
+													"value": "20"
+												},
+												{
+													"key": "transType",
+													"value": "Chal"
+												},
+												{
+													"key": "userId",
+													"value": "All"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Userwise report By Gift",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDQ1YzYxZWQ1MWUwNjI2NzhkM2MzMzciLCJpZCI6IjYwNDVjNjFlZDUxZTA2MjY3OGQzYzMzNyIsImlhdCI6MTYxNjE3ODc3MiwiZXhwIjozMjMyMzYxMTQ0fQ.-h3Er6qmGFrEUosbMWmIsrS0mWj4471IlZLA-p7X9vc",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5050/report/userwise?startDate=2020-01-25&endDate=2021-12-12&skip=0&limit=20&transType=Gift&userId=All",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5050",
+											"path": [
+												"report",
+												"userwise"
+											],
+											"query": [
+												{
+													"key": "startDate",
+													"value": "2020-01-25"
+												},
+												{
+													"key": "endDate",
+													"value": "2021-12-12"
+												},
+												{
+													"key": "skip",
+													"value": "0"
+												},
+												{
+													"key": "limit",
+													"value": "20"
+												},
+												{
+													"key": "transType",
+													"value": "Gift"
+												},
+												{
+													"key": "userId",
+													"value": "All"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Userwise report By Tip",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDQ1YzYxZWQ1MWUwNjI2NzhkM2MzMzciLCJpZCI6IjYwNDVjNjFlZDUxZTA2MjY3OGQzYzMzNyIsImlhdCI6MTYxNjE3ODc3MiwiZXhwIjozMjMyMzYxMTQ0fQ.-h3Er6qmGFrEUosbMWmIsrS0mWj4471IlZLA-p7X9vc",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5050/report/userwise?startDate=2021-01-25&endDate=2021-05-12&skip=0&limit=20&transType=Tip&userId=6045b0c974b12d28bcfd2960",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5050",
+											"path": [
+												"report",
+												"userwise"
+											],
+											"query": [
+												{
+													"key": "startDate",
+													"value": "2021-01-25"
+												},
+												{
+													"key": "endDate",
+													"value": "2021-05-12"
+												},
+												{
+													"key": "skip",
+													"value": "0"
+												},
+												{
+													"key": "limit",
+													"value": "20"
+												},
+												{
+													"key": "transType",
+													"value": "Tip"
+												},
+												{
+													"key": "userId",
+													"value": "6045b0c974b12d28bcfd2960"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Userwise report By Recharge",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxNjg2MDk3MiwiZXhwIjozMjMzNzI1NTQ0fQ.v67XmDEHTelbaYtH__JYSR-r_cceaMRrjoe0mPhvuXA",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5050/report/userwise?startDate=2021-01-25&endDate=2021-05-12&skip=0&limit=30&transType=All&userId=All",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5050",
+											"path": [
+												"report",
+												"userwise"
+											],
+											"query": [
+												{
+													"key": "startDate",
+													"value": "2021-01-25"
+												},
+												{
+													"key": "endDate",
+													"value": "2021-05-12"
+												},
+												{
+													"key": "skip",
+													"value": "0"
+												},
+												{
+													"key": "limit",
+													"value": "30"
+												},
+												{
+													"key": "transType",
+													"value": "All"
+												},
+												{
+													"key": "userId",
+													"value": "All"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Userwise report By Recharge Revert",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDQ1YzY2OWQ1MWUwNjI2NzhkM2MzMzkiLCJpZCI6IjYwNDVjNjY5ZDUxZTA2MjY3OGQzYzMzOSIsImlhdCI6MTYxNjE3ODY0NiwiZXhwIjozMjMyMzYwODkyfQ.ffWwRNi2h0XhRUBEtZ6VI0BfTtKHDBuTfwHbr55Zuv8",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5050/report/userwise?startDate=2021-01-25&endDate=2021-05-12&skip=0&limit=20&transType=RechargeRevert&userId=6045b0c974b12d28bcfd2960",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5050",
+											"path": [
+												"report",
+												"userwise"
+											],
+											"query": [
+												{
+													"key": "startDate",
+													"value": "2021-01-25"
+												},
+												{
+													"key": "endDate",
+													"value": "2021-05-12"
+												},
+												{
+													"key": "skip",
+													"value": "0"
+												},
+												{
+													"key": "limit",
+													"value": "20"
+												},
+												{
+													"key": "transType",
+													"value": "RechargeRevert"
+												},
+												{
+													"key": "userId",
+													"value": "6045b0c974b12d28bcfd2960"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Userwise report By Settelment",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxNjUyMDcyNiwiZXhwIjozMjMzMDQ1MDUyfQ.E8dIpXjdRu6pCDQqnbPgr5pjXZV2Vk5tm54bqo5JdKM",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5050/report/userwise?startDate=2021-01-25&endDate=2021-05-12&skip=0&limit=20&transType=Settlement&userId=All",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5050",
+											"path": [
+												"report",
+												"userwise"
+											],
+											"query": [
+												{
+													"key": "startDate",
+													"value": "2021-01-25"
+												},
+												{
+													"key": "endDate",
+													"value": "2021-05-12"
+												},
+												{
+													"key": "skip",
+													"value": "0"
+												},
+												{
+													"key": "limit",
+													"value": "20"
+												},
+												{
+													"key": "transType",
+													"value": "Settlement"
+												},
+												{
+													"key": "userId",
+													"value": "All"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "TransactionTypeAllUserTypeSelect",
+							"item": [
+								{
+									"name": "Userwise report By ALL transaction type",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxMTkwNDQ3NywiZXhwIjozMjIzODEyNTU0fQ.FUUT26wLNjktfxEZgfC4ZhVl58kRMuV98XQgvoz5qIs",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5050/report/userwise?startDate=2021-01-25&endDate=2021-05-12&skip=0&limit=30&transType=All&userId=All",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5050",
+											"path": [
+												"report",
+												"userwise"
+											],
+											"query": [
+												{
+													"key": "startDate",
+													"value": "2021-01-25"
+												},
+												{
+													"key": "endDate",
+													"value": "2021-05-12"
+												},
+												{
+													"key": "skip",
+													"value": "0"
+												},
+												{
+													"key": "limit",
+													"value": "30"
+												},
+												{
+													"key": "transType",
+													"value": "All"
+												},
+												{
+													"key": "userId",
+													"value": "All"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Userwise report By UserId transaction type All",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDE1OTQ4M2QzNGIzMDEzODg4YTdkMGQiLCJpZCI6IjYwMTU5NDgzZDM0YjMwMTM4ODhhN2QwZCIsImlhdCI6MTYxNjE3ODE0NiwiZXhwIjozMjMyMzU5ODkyfQ.r_3J8l558pZ3oN6lirZtV7BwzWKDUwOMSeeRG-MWQiA",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5050/report/userwise?startDate=2021-01-25&endDate=2021-05-12&skip=0&limit=20&transType=All&userId=6045b0c974b12d28bcfd2960",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5050",
+											"path": [
+												"report",
+												"userwise"
+											],
+											"query": [
+												{
+													"key": "startDate",
+													"value": "2021-01-25"
+												},
+												{
+													"key": "endDate",
+													"value": "2021-05-12"
+												},
+												{
+													"key": "skip",
+													"value": "0"
+												},
+												{
+													"key": "limit",
+													"value": "20"
+												},
+												{
+													"key": "transType",
+													"value": "All"
+												},
+												{
+													"key": "userId",
+													"value": "6045b0c974b12d28bcfd2960"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Userwise report",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxMTkwNDQ3NywiZXhwIjozMjIzODEyNTU0fQ.FUUT26wLNjktfxEZgfC4ZhVl58kRMuV98XQgvoz5qIs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5050/report/userwise?startDate=2021-01-25&endDate=2021-05-12&userId=60159539d34b3013888a7d17&skip=0&limit=20&transType=Gift",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5050",
+									"path": [
+										"report",
+										"userwise"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "2021-01-25"
+										},
+										{
+											"key": "endDate",
+											"value": "2021-05-12"
+										},
+										{
+											"key": "userId",
+											"value": "60159539d34b3013888a7d17"
+										},
+										{
+											"key": "skip",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "20"
+										},
+										{
+											"key": "transType",
+											"value": "Gift"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "AdminCommission",
+					"item": [
+						{
+							"name": "Admin commission by Admin Id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxNTAzODY4NCwiZXhwIjozMjMwMDgwOTY4fQ.AB4LuB9BcN5g9dTsRdE6fU6pQnc_er1wdhHs0xKdZYI",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5050/report/commission/admin?date=2021-01-31",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5050",
+									"path": [
+										"report",
+										"commission",
+										"admin"
+									],
+									"query": [
+										{
+											"key": "date",
+											"value": "2021-01-31"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Settlement",
+					"item": [
+						{
+							"name": "Recharge",
+							"item": [
+								{
+									"name": "Recharge report with type Distributor",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxNjMwNjI2MywiZXhwIjozMjMyNjE2MTI2fQ.Aey-460DjzsyzyWeju7AvqHFKikMb_0Vj29V81vk73g",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5050/report/settlement?startDate=2021-01-25&endDate=2021-09-13&skip=0&limit=20&reportType=distributor&userId=All&transType=Recharge",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5050",
+											"path": [
+												"report",
+												"settlement"
+											],
+											"query": [
+												{
+													"key": "startDate",
+													"value": "2021-01-25"
+												},
+												{
+													"key": "endDate",
+													"value": "2021-09-13"
+												},
+												{
+													"key": "skip",
+													"value": "0"
+												},
+												{
+													"key": "limit",
+													"value": "20"
+												},
+												{
+													"key": "reportType",
+													"value": "distributor"
+												},
+												{
+													"key": "userId",
+													"value": "All"
+												},
+												{
+													"key": "transType",
+													"value": "Recharge"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Recharge report with type Agent",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxNjMwNjI2MywiZXhwIjozMjMyNjE2MTI2fQ.Aey-460DjzsyzyWeju7AvqHFKikMb_0Vj29V81vk73g",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5050/report/settlement?startDate=2021-03-15&endDate=2021-03-22&skip=0&limit=20&reportType=agent&userId=all&transType=Recharge",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5050",
+											"path": [
+												"report",
+												"settlement"
+											],
+											"query": [
+												{
+													"key": "startDate",
+													"value": "2021-03-15"
+												},
+												{
+													"key": "endDate",
+													"value": "2021-03-22"
+												},
+												{
+													"key": "skip",
+													"value": "0"
+												},
+												{
+													"key": "limit",
+													"value": "20"
+												},
+												{
+													"key": "reportType",
+													"value": "agent"
+												},
+												{
+													"key": "userId",
+													"value": "all"
+												},
+												{
+													"key": "transType",
+													"value": "Recharge"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Recharge report with type user",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDFkOTUxMmYxZTJkMzFlODQzODVjYzYiLCJpZCI6IjYwMWQ5NTEyZjFlMmQzMWU4NDM4NWNjNiIsImlhdCI6MTYxNjY4NTc1MCwiZXhwIjozMjMzMzc1MTAwfQ.68d4pJnsfXvvYGN_JRFCaD2G4GKyiyxo_wV_qZqcGIM",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5050/report/settlement?startDate=2021-01-25&endDate=2021-09-13&skip=0&limit=20&reportType=user&userId=All&transType=Recharge",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5050",
+											"path": [
+												"report",
+												"settlement"
+											],
+											"query": [
+												{
+													"key": "startDate",
+													"value": "2021-01-25"
+												},
+												{
+													"key": "endDate",
+													"value": "2021-09-13"
+												},
+												{
+													"key": "skip",
+													"value": "0"
+												},
+												{
+													"key": "limit",
+													"value": "20"
+												},
+												{
+													"key": "reportType",
+													"value": "user"
+												},
+												{
+													"key": "userId",
+													"value": "All"
+												},
+												{
+													"key": "transType",
+													"value": "Recharge"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Recharge Revert",
+							"item": [
+								{
+									"name": "Recharge Revert report with type Distributor",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxNjMwNjI2MywiZXhwIjozMjMyNjE2MTI2fQ.Aey-460DjzsyzyWeju7AvqHFKikMb_0Vj29V81vk73g",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5050/report/settlement?startDate=2021-01-25&endDate=2021-09-13&skip=0&limit=20&reportType=distributor&userId=All&transType=RechargeRevert",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5050",
+											"path": [
+												"report",
+												"settlement"
+											],
+											"query": [
+												{
+													"key": "startDate",
+													"value": "2021-01-25"
+												},
+												{
+													"key": "endDate",
+													"value": "2021-09-13"
+												},
+												{
+													"key": "skip",
+													"value": "0"
+												},
+												{
+													"key": "limit",
+													"value": "20"
+												},
+												{
+													"key": "reportType",
+													"value": "distributor"
+												},
+												{
+													"key": "userId",
+													"value": "All"
+												},
+												{
+													"key": "transType",
+													"value": "RechargeRevert"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Recharge Revert report with type Agent",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxNjMwNjI2MywiZXhwIjozMjMyNjE2MTI2fQ.Aey-460DjzsyzyWeju7AvqHFKikMb_0Vj29V81vk73g",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5050/report/settlement?startDate=2021-03-15&endDate=2021-03-22&skip=0&limit=20&reportType=agent&userId=all&transType=RechargeRevert",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5050",
+											"path": [
+												"report",
+												"settlement"
+											],
+											"query": [
+												{
+													"key": "startDate",
+													"value": "2021-03-15"
+												},
+												{
+													"key": "endDate",
+													"value": "2021-03-22"
+												},
+												{
+													"key": "skip",
+													"value": "0"
+												},
+												{
+													"key": "limit",
+													"value": "20"
+												},
+												{
+													"key": "reportType",
+													"value": "agent"
+												},
+												{
+													"key": "userId",
+													"value": "all"
+												},
+												{
+													"key": "transType",
+													"value": "RechargeRevert"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Recharge Revert report with type user",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDFkOTUxMmYxZTJkMzFlODQzODVjYzYiLCJpZCI6IjYwMWQ5NTEyZjFlMmQzMWU4NDM4NWNjNiIsImlhdCI6MTYxNjY4NTc1MCwiZXhwIjozMjMzMzc1MTAwfQ.68d4pJnsfXvvYGN_JRFCaD2G4GKyiyxo_wV_qZqcGIM",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5050/report/settlement?startDate=2021-01-25&endDate=2021-09-13&skip=0&limit=20&reportType=user&userId=All&transType=RechargeRevert",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5050",
+											"path": [
+												"report",
+												"settlement"
+											],
+											"query": [
+												{
+													"key": "startDate",
+													"value": "2021-01-25"
+												},
+												{
+													"key": "endDate",
+													"value": "2021-09-13"
+												},
+												{
+													"key": "skip",
+													"value": "0"
+												},
+												{
+													"key": "limit",
+													"value": "20"
+												},
+												{
+													"key": "reportType",
+													"value": "user"
+												},
+												{
+													"key": "userId",
+													"value": "All"
+												},
+												{
+													"key": "transType",
+													"value": "RechargeRevert"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Settelment",
+							"item": [
+								{
+									"name": "Settlement report with type Distributor",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxNjMwNjI2MywiZXhwIjozMjMyNjE2MTI2fQ.Aey-460DjzsyzyWeju7AvqHFKikMb_0Vj29V81vk73g",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5050/report/settlement?startDate=2021-01-25&endDate=2021-09-13&skip=0&limit=20&reportType=distributor&userId=All&transType=Settlement",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5050",
+											"path": [
+												"report",
+												"settlement"
+											],
+											"query": [
+												{
+													"key": "startDate",
+													"value": "2021-01-25"
+												},
+												{
+													"key": "endDate",
+													"value": "2021-09-13"
+												},
+												{
+													"key": "skip",
+													"value": "0"
+												},
+												{
+													"key": "limit",
+													"value": "20"
+												},
+												{
+													"key": "reportType",
+													"value": "distributor"
+												},
+												{
+													"key": "userId",
+													"value": "All"
+												},
+												{
+													"key": "transType",
+													"value": "Settlement"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Settlement report with type Agent",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxNjMwNjI2MywiZXhwIjozMjMyNjE2MTI2fQ.Aey-460DjzsyzyWeju7AvqHFKikMb_0Vj29V81vk73g",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5050/report/settlement?startDate=2021-03-15&endDate=2021-03-22&skip=0&limit=20&reportType=agent&userId=all&transType=Settlement",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5050",
+											"path": [
+												"report",
+												"settlement"
+											],
+											"query": [
+												{
+													"key": "startDate",
+													"value": "2021-03-15"
+												},
+												{
+													"key": "endDate",
+													"value": "2021-03-22"
+												},
+												{
+													"key": "skip",
+													"value": "0"
+												},
+												{
+													"key": "limit",
+													"value": "20"
+												},
+												{
+													"key": "reportType",
+													"value": "agent"
+												},
+												{
+													"key": "userId",
+													"value": "all"
+												},
+												{
+													"key": "transType",
+													"value": "Settlement"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Settlement report with type user",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDFkOTUxMmYxZTJkMzFlODQzODVjYzYiLCJpZCI6IjYwMWQ5NTEyZjFlMmQzMWU4NDM4NWNjNiIsImlhdCI6MTYxNjY4NTc1MCwiZXhwIjozMjMzMzc1MTAwfQ.68d4pJnsfXvvYGN_JRFCaD2G4GKyiyxo_wV_qZqcGIM",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:5050/report/settlement?startDate=2021-01-25&endDate=2021-09-13&skip=0&limit=20&reportType=user&userId=All&transType=Settlement",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "5050",
+											"path": [
+												"report",
+												"settlement"
+											],
+											"query": [
+												{
+													"key": "startDate",
+													"value": "2021-01-25"
+												},
+												{
+													"key": "endDate",
+													"value": "2021-09-13"
+												},
+												{
+													"key": "skip",
+													"value": "0"
+												},
+												{
+													"key": "limit",
+													"value": "20"
+												},
+												{
+													"key": "reportType",
+													"value": "user"
+												},
+												{
+													"key": "userId",
+													"value": "All"
+												},
+												{
+													"key": "transType",
+													"value": "Settlement"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "PlayerHourly",
+					"item": [
+						{
+							"name": "Player hourly report",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxNjMwNjI2MywiZXhwIjozMjMyNjE2MTI2fQ.Aey-460DjzsyzyWeju7AvqHFKikMb_0Vj29V81vk73g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5050/report/player/hourly?startDate=2021-01-25&endDate=2021-09-13&skip=0&limit=20&userId=all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5050",
+									"path": [
+										"report",
+										"player",
+										"hourly"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "2021-01-25"
+										},
+										{
+											"key": "endDate",
+											"value": "2021-09-13"
+										},
+										{
+											"key": "skip",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "20"
+										},
+										{
+											"key": "userId",
+											"value": "all"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Turnover",
+					"item": [
+						{
+							"name": "turnover report",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxMTkwNDQ3NywiZXhwIjozMjIzODEyNTU0fQ.FUUT26wLNjktfxEZgfC4ZhVl58kRMuV98XQgvoz5qIs",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5050/report/turnover?startDate=2021-01-13&endDate=2021-04-16&distributorId=5f8dd73632881216b4db3558",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5050",
+									"path": [
+										"report",
+										"turnover"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "2021-01-13"
+										},
+										{
+											"key": "endDate",
+											"value": "2021-04-16"
+										},
+										{
+											"key": "distributorId",
+											"value": "5f8dd73632881216b4db3558"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "HandDetail",
+					"item": [
+						{
+							"name": "Hand detail store report all user all tableid",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxNjMwNjI2MywiZXhwIjozMjMyNjE2MTI2fQ.Aey-460DjzsyzyWeju7AvqHFKikMb_0Vj29V81vk73g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5050/report/hand/details?startDate=2021-04-15&endDate=2021-04-25&skip=0&limit=100&userId=all&tableId=all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5050",
+									"path": [
+										"report",
+										"hand",
+										"details"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "2021-04-15"
+										},
+										{
+											"key": "endDate",
+											"value": "2021-04-25"
+										},
+										{
+											"key": "skip",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "100"
+										},
+										{
+											"key": "userId",
+											"value": "all"
+										},
+										{
+											"key": "tableId",
+											"value": "all"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Hand detail store report by userId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxNjMwNjI2MywiZXhwIjozMjMyNjE2MTI2fQ.Aey-460DjzsyzyWeju7AvqHFKikMb_0Vj29V81vk73g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5050/report/hand/details?startDate=2021-01-25&endDate=2021-09-13&skip=0&limit=100&userId=601594dfd34b3013888a7d0f&tableId=all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5050",
+									"path": [
+										"report",
+										"hand",
+										"details"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "2021-01-25"
+										},
+										{
+											"key": "endDate",
+											"value": "2021-09-13"
+										},
+										{
+											"key": "skip",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "100"
+										},
+										{
+											"key": "userId",
+											"value": "601594dfd34b3013888a7d0f"
+										},
+										{
+											"key": "tableId",
+											"value": "all"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Hand detail store report by tableId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxNjMwNjI2MywiZXhwIjozMjMyNjE2MTI2fQ.Aey-460DjzsyzyWeju7AvqHFKikMb_0Vj29V81vk73g",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5050/report/hand/details?startDate=2021-01-25&endDate=2021-09-13&skip=0&limit=100&userId=all&tableId=5fa1912db9751e2ffdf22109",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5050",
+									"path": [
+										"report",
+										"hand",
+										"details"
+									],
+									"query": [
+										{
+											"key": "startDate",
+											"value": "2021-01-25"
+										},
+										{
+											"key": "endDate",
+											"value": "2021-09-13"
+										},
+										{
+											"key": "skip",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "100"
+										},
+										{
+											"key": "userId",
+											"value": "all"
+										},
+										{
+											"key": "tableId",
+											"value": "5fa1912db9751e2ffdf22109"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Game",
+			"item": [
+				{
+					"name": "Create game",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDE2NTNiMzk3OTEyMzI5NDQ1YWE3YWQiLCJpZCI6IjYwMTY1M2IzOTc5MTIzMjk0NDVhYTdhZCIsImlhdCI6MTYxMjA3NjAzOCwiZXhwIjozMjI0MTU1Njc2fQ.HR3hXMHcIALEYaVBsCoc7gszGE9qPlCGhywWA_JKwTY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"name\": \"test\",\r\n        \"maxPlayers\": 10,\r\n        \"slotUsed\": 5,\r\n        \"boot\": 1,\r\n        \"maxBet\": 10,\r\n        \"potLimit\": 10,\r\n        \"slotUsedArray\": [1,2,3,4,5],\r\n        \"gameType\": 1,\r\n        \"isShowAvailable\": false,\r\n        \"type\": \"chal   \",\r\n        \"color\": \"red\",\r\n        \"color_code\": \"abc\",\r\n        \"tableSubType\": \"abc\",\r\n        \"password\": \"abc\",\r\n        \"commission\": 2,\r\n        \"turnTime\": 1,\r\n        \"minChip\":2,\r\n        \"maxChip\":5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/table/createTable",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"table",
+								"createTable"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Gift",
+			"item": [
+				{
+					"name": "Add gift",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1ZWU0ZGJkYjQ4NGM4MDBiY2M0MGJjMDQiLCJpZCI6IjVlZTRkYmRiNDg0YzgwMGJjYzQwYmMwNCIsImlhdCI6MTYxNjAwMTIwMCwiZXhwIjozMjMyMDA2MDAwfQ.QZCr4ZVqSOfONdIub7km3nrwoN5Hm8fKJE15o2U8yts",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"name\":\"love\",\r\n      \"price\": 10,\r\n      \"display_name\": \"https://i.pinimg.com/originals/67/ac/a8/67aca82baa85cdbc23f501aa921f362a.png\",\r\n      \"pictureUrl\": \"http://soundbible.com/mp3/Winchester12-RA_The_Sun_God-1722751268.mp3\",\r\n      \"mp3Url\": \"req.body.mp3Url\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5050/gift/addGift",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"gift",
+								"addGift"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dashboard",
+			"item": [
+				{
+					"name": "Get users dashbord count",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MDQ1YzY2OWQ1MWUwNjI2NzhkM2MzMzkiLCJpZCI6IjYwNDVjNjY5ZDUxZTA2MjY3OGQzYzMzOSIsImlhdCI6MTYyMDA1OTAzMywiZXhwIjozMjQwMTIxNjY2fQ.dA4EDfxUPG8fjsJRFs2Tw-V3QkMXjm_RwZ2LLDvIQHs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5050/dashboard/userCount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5050",
+							"path": [
+								"dashboard",
+								"userCount"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
